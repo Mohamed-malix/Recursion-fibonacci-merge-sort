@@ -1,16 +1,13 @@
 
 function fibsRec(n) {
-    const result=[];
-    let num;
+  
+    if(n<2) return [n];
+    if(n==2) return [0, 1];
 
-    if(n<2) {
-        return n;
-    }else{
-        num=fibsRec(n-1)+fibsRec(n-2);
-        result.push(num);
-    }
-
+    let result= fibsRec(n-1);
+    let nextNum= result[result.length-1] + result[result.length-2];
+    result.push(nextNum);
     return result;
 }
 
-console.log(fibsRec(8));
+console.log(fibsRec(7));
